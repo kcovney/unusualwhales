@@ -1,2 +1,1 @@
-write a python program that retrieves the first 15 messages from the unusualwhales bluesky account at https://bsky.app/profile/unusualwhales.bsky.social
-display all messages in reverse chronological order in the terminal
+write a python program that retrieves the first 15 messages from the unusualwhales bluesky account at https://bsky.app/profile/unusualwhales.bsky.social. display all messages in reverse chronological order in the terminal
