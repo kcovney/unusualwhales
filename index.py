@@ -1,11 +1,18 @@
+import os
 from atproto import Client
 import datetime
 
 def fetch_user_posts(handle: str, limit: int = 15):
     client = Client()
 
-    # 🔑 Login with your Bluesky handle + app password
-    client.login("kcovney.bsky.social", "2doe-snqo-tuts-dfxx")
+    # Read credentials from environment variables
+    username = os.getenv("BSKY_HANDLE")
+    password = os.getenv("BSKY_APP_PASSWORD")
+
+    if not username or not password:
+        raise ValueError("Missing BSKY_HANDLE or BSKY_APP_PASSWORD environment variables")
+
+    client.login(username, password)
 
     # Get profile info
     profile = client.app.bsky.actor.get_profile(params={"actor": handle})
